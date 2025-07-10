@@ -14,16 +14,19 @@ document.querySelectorAll('input[name="duration"]').forEach(radio => {
     });
 });
 
-document.getElementById('orderForm').addEventListener('submit', async function(e) {
+document.getElementById('orderForm').addEventListener('submit', async function (e) {
     e.preventDefault();
+
     const form = e.target;
     const data = new URLSearchParams(new FormData(form));
-    const res = await fetch('/order', {
-    method: 'POST',
-    body: data,
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+
+    const response = await fetch('/contact', {
+        method:'POST',
+        body:data,
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
     });
-    const text = await res.text();
+
+    const text = await response.text();
     document.getElementById('responseMsg').textContent = text;
     form.reset();
 });

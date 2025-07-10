@@ -24,10 +24,11 @@ section {
 .product-card {
   border: 1px solid #ccc;
   padding: 10px;
-  width: 180px;
+  width: 220px;
   text-align: center;
   transition: transform 0.3s;
 }
+
 .product-card:hover {
   transform: scale(1.05);
 }
